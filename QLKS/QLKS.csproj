@@ -1,0 +1,487 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{90AFC174-A268-403E-B9BB-EE99F2F4C600}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QLKS</RootNamespace>
+    <AssemblyName>QLKS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.21.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.21.10.0\lib\net462\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=6.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.6.0.1\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BAL\BillBAL.cs" />
+    <Compile Include="BAL\CusBAL.cs" />
+    <Compile Include="BAL\DKTourBAL.cs" />
+    <Compile Include="BAL\DvBAL.cs" />
+    <Compile Include="BAL\NvBAL.cs" />
+    <Compile Include="BAL\PnBAL.cs" />
+    <Compile Include="BAL\Receptionist.cs" />
+    <Compile Include="BAL\ReceptionistDividedRoomBAL.cs" />
+    <Compile Include="BAL\ReceptionistManageRoomBAL.cs" />
+    <Compile Include="BAL\ReceptionistOrderRoomBAL.cs" />
+    <Compile Include="BAL\ReceptionistRoomBAL.cs" />
+    <Compile Include="BAL\RecepUpdateRoomBAL.cs" />
+    <Compile Include="BAL\RequestBookingBAL.cs" />
+    <Compile Include="BAL\RoomAgencyBAL.cs" />
+    <Compile Include="BAL\RoomBAL.cs" />
+    <Compile Include="BAL\RuleBAL.cs" />
+    <Compile Include="BAL\SessionBAL.cs" />
+    <Compile Include="BAL\TourBAL.cs" />
+    <Compile Include="DAL\BillDAL.cs" />
+    <Compile Include="DAL\ReceptionistDividedRoomDAL.cs" />
+    <Compile Include="DAL\ReceptionistManageRoomDAL.cs" />
+    <Compile Include="DAL\ReceptionistOrderRoomDAL.cs" />
+    <Compile Include="DAL\RecepUpdateRoomDAL.cs" />
+    <Compile Include="DAL\CusDAL.cs" />
+    <Compile Include="DAL\DKTourDAL.cs" />
+    <Compile Include="DAL\DvDAL.cs" />
+    <Compile Include="DAL\NvDAL.cs" />
+    <Compile Include="DAL\PnDAL.cs" />
+    <Compile Include="DAL\ReceptionistRoomDAL.cs" />
+    <Compile Include="DAL\RequestBookingDAL.cs" />
+    <Compile Include="DAL\RoomAgencyDAL.cs" />
+    <Compile Include="DAL\RuleDAL.cs" />
+    <Compile Include="DAL\TourDAL.cs" />
+    <Compile Include="DAL\Utility.cs" />
+    <Compile Include="DAL\RoomDAL.cs" />
+    <Compile Include="GUI\FormAddBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAddBill.Designer.cs">
+      <DependentUpon>FormAddBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAddDKTour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAddDKTour.Designer.cs" />
+    <Compile Include="GUI\FormAddServiceToRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAddServiceToRoom.Designer.cs">
+      <DependentUpon>FormAddServiceToRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin.Designer.cs">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdminEditDT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdminEditDT.Designer.cs">
+      <DependentUpon>FormAdminEditDT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdminEditDV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdminEditDV.Designer.cs">
+      <DependentUpon>FormAdminEditDV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdminEditEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdminEditEmployee.Designer.cs">
+      <DependentUpon>FormAdminEditEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdminEditRule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdminEditRule.Designer.cs">
+      <DependentUpon>FormAdminEditRule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin_AddDV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin_AddDV.Designer.cs">
+      <DependentUpon>FormAdmin_AddDV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin_AddNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin_AddNV.Designer.cs">
+      <DependentUpon>FormAdmin_AddNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin_AddPartner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin_AddPartner.Designer.cs">
+      <DependentUpon>FormAdmin_AddPartner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin_AddRule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin_AddRule.Designer.cs">
+      <DependentUpon>FormAdmin_AddRule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin_DT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin_DT.Designer.cs">
+      <DependentUpon>FormAdmin_DT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin_DV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin_DV.Designer.cs">
+      <DependentUpon>FormAdmin_DV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin_HD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin_HD.Designer.cs">
+      <DependentUpon>FormAdmin_HD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin_KH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin_KH.Designer.cs">
+      <DependentUpon>FormAdmin_KH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin_NV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin_NV.Designer.cs">
+      <DependentUpon>FormAdmin_NV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin_QD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin_QD.Designer.cs">
+      <DependentUpon>FormAdmin_QD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin_Tour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin_Tour.Designer.cs">
+      <DependentUpon>FormAdmin_Tour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAgency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAgency.Designer.cs">
+      <DependentUpon>FormAgency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAddCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAddCustomer.Designer.cs">
+      <DependentUpon>FormAddCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAgencyBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAgencyBooking.Designer.cs">
+      <DependentUpon>FormAgencyBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormDevideRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormDevideRoom.Designer.cs">
+      <DependentUpon>FormDevideRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormDKTour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormDKTour.Designer.cs" />
+    <Compile Include="GUI\FormEditDKTour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormEditDKTour.Designer.cs" />
+    <Compile Include="GUI\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormLT_Customer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormLT_Customer.Designer.cs">
+      <DependentUpon>FormLT_Customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormLT_editCus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormLT_editCus.Designer.cs">
+      <DependentUpon>FormLT_editCus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormLT_Service.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormLT_Service.Designer.cs">
+      <DependentUpon>FormLT_Service.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormRecepManageRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormRecepManageRoom.Designer.cs">
+      <DependentUpon>FormRecepManageRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormRecepOrderGroupRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormRecepOrderGroupRoom.Designer.cs">
+      <DependentUpon>FormRecepOrderGroupRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormRecepSelectedOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormRecepSelectedOrder.Designer.cs">
+      <DependentUpon>FormRecepSelectedOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormReceptionist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormReceptionist.Designer.cs">
+      <DependentUpon>FormReceptionist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormReceptionistOrderPersionalRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormReceptionistOrderPersionalRoom.Designer.cs">
+      <DependentUpon>FormReceptionistOrderPersionalRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormReceptionistViewRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormReceptionistViewRequest.Designer.cs">
+      <DependentUpon>FormReceptionistViewRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormReceptionistViewRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormReceptionistViewRoom.Designer.cs">
+      <DependentUpon>FormReceptionistViewRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormRecepUpdateRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormRecepUpdateRoom.Designer.cs">
+      <DependentUpon>FormRecepUpdateRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormXuatHD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormXuatHD.Designer.cs">
+      <DependentUpon>FormXuatHD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\FormAddBill.resx">
+      <DependentUpon>FormAddBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAddDKTour.resx" />
+    <EmbeddedResource Include="GUI\FormAddServiceToRoom.resx">
+      <DependentUpon>FormAddServiceToRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin.resx">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdminEditDT.resx">
+      <DependentUpon>FormAdminEditDT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdminEditDV.resx">
+      <DependentUpon>FormAdminEditDV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdminEditEmployee.resx">
+      <DependentUpon>FormAdminEditEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdminEditRule.resx">
+      <DependentUpon>FormAdminEditRule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin_AddDV.resx">
+      <DependentUpon>FormAdmin_AddDV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin_AddNV.resx">
+      <DependentUpon>FormAdmin_AddNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin_AddPartner.resx">
+      <DependentUpon>FormAdmin_AddPartner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin_AddRule.resx">
+      <DependentUpon>FormAdmin_AddRule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin_DT.resx">
+      <DependentUpon>FormAdmin_DT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin_DV.resx">
+      <DependentUpon>FormAdmin_DV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin_HD.resx">
+      <DependentUpon>FormAdmin_HD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin_KH.resx">
+      <DependentUpon>FormAdmin_KH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin_NV.resx">
+      <DependentUpon>FormAdmin_NV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin_QD.resx">
+      <DependentUpon>FormAdmin_QD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin_Tour.resx">
+      <DependentUpon>FormAdmin_Tour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAgency.resx">
+      <DependentUpon>FormAgency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAddCustomer.resx">
+      <DependentUpon>FormAddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAgencyBooking.resx">
+      <DependentUpon>FormAgencyBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormDevideRoom.resx">
+      <DependentUpon>FormDevideRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormDKTour.resx" />
+    <EmbeddedResource Include="GUI\FormEditDKTour.resx" />
+    <EmbeddedResource Include="GUI\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormLT_Customer.resx">
+      <DependentUpon>FormLT_Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormLT_editCus.resx">
+      <DependentUpon>FormLT_editCus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormLT_Service.resx">
+      <DependentUpon>FormLT_Service.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormRecepManageRoom.resx">
+      <DependentUpon>FormRecepManageRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormRecepOrderGroupRoom.resx">
+      <DependentUpon>FormRecepOrderGroupRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormRecepSelectedOrder.resx">
+      <DependentUpon>FormRecepSelectedOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormReceptionist.resx">
+      <DependentUpon>FormReceptionist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormReceptionistOrderPersionalRoom.resx">
+      <DependentUpon>FormReceptionistOrderPersionalRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormReceptionistViewRequest.resx">
+      <DependentUpon>FormReceptionistViewRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormReceptionistViewRoom.resx">
+      <DependentUpon>FormReceptionistViewRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormRecepUpdateRoom.resx">
+      <DependentUpon>FormRecepUpdateRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormXuatHD.resx">
+      <DependentUpon>FormXuatHD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Oracle.ManagedDataAccess.Client.Configuration.Section.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Text.Json.6.0.1\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.1\build\System.Text.Json.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Text.Json.6.0.1\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Text.Json.6.0.1\build\System.Text.Json.targets'))" />
+  </Target>
+</Project>
